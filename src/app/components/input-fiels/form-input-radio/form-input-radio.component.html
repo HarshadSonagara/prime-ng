@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+  <!-- Make sure formGroup is applied here -->
+  <div class="flex col-12 ml:col-6">
+    <div class="text-lg">{{ element.title }}</div>
+    <div *ngFor="let choice of element.choices" class="field-radiobutton">
+      <p-radioButton
+        [inputId]="element.name + '_' + choice.value"
+        name="{{ element.name }}"
+        [value]="choice.value"
+        formControlName="{{ element.name }}"
+        variant="filled"
+        class="ml-2"
+      >
+      </p-radioButton>
+      <label [for]="element.name + '_' + choice.value" class="ml-2">
+        {{ choice.text }}
+      </label>
+    </div>
+  </div>
+</div>

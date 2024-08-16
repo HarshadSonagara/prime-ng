@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+  <!-- Apply formGroup here -->
+  <div class="main-form-contain">
+    <div class="col-12">
+      <p-floatLabel>
+        <textarea
+          [id]="element.name"
+          id="float-input"
+          rows="5"
+          cols="30"
+          [attr.placeholder]="element.title"
+          pInputTextarea
+          [formControlName]="element.name"
+        >
+        </textarea>
+        <label for="{{ element.name }}">{{ element.title }}</label>
+      </p-floatLabel>
+    </div>
+  </div>
+</div>

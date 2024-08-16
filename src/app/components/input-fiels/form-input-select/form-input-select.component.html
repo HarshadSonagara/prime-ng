@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup">
+  <!-- Apply formGroup here -->
+  <div class="main-form-contain">
+    <div class="col-12">
+      <p-dropdown
+        [options]="element.choices"
+        optionLabel="name"
+        [formControlName]="element.name"
+        [placeholder]="element.title"
+      />
+    </div>
+  </div>
+</div>

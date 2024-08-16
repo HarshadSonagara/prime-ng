@@ -1,0 +1,15 @@
+<p-tabView [(activeIndex)]="activeIndex">
+  <ng-container *ngFor="let page of formConfig.pages; let pageIndex = index">
+    <ng-container
+      *ngFor="let section of page.sections; let sectionIndex = index"
+    >
+      <p-tabPanel [header]="section.name">
+        <app-form-controller
+          [elements]="section.elements"
+          [formGroup]="formGroups[pageIndex][sectionIndex]"
+        >
+        </app-form-controller>
+      </p-tabPanel>
+    </ng-container>
+  </ng-container>
+</p-tabView>

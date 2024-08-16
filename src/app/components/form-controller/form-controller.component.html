@@ -1,0 +1,40 @@
+<form [formGroup]="formGroup">
+  <ng-container *ngFor="let element of elements">
+    <div [ngSwitch]="element.type">
+      <!-- Text Input -->
+      <div *ngSwitchCase="'text'" class="main-form-contain">
+        <app-form-input-text [formGroup]="formGroup" [element]="element" />
+      </div>
+
+      <!-- Radio Group -->
+      <div *ngSwitchCase="'radiogroup'">
+        <app-form-input-radio [element]="element" [formGroup]="formGroup" />
+      </div>
+
+      <!-- text area  -->
+      <div *ngSwitchCase="'textarea'">
+        <app-form-input-textarea [element]="element" [formGroup]="formGroup" />
+      </div>
+
+      <!-- Dropdown  -->
+      <div *ngSwitchCase="'dropdown'">
+        <app-form-input-select
+          [element]="element"
+          [formGroup]="formGroup"
+        ></app-form-input-select>
+      </div>
+
+      <!-- checkbox  -->
+      <div *ngSwitchCase="'checkbox'">
+        <app-form-input-checkbox
+          [element]="element"
+          [formGroup]="formGroup"
+        ></app-form-input-checkbox>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="py-2">
+    <p-button type="submit" (click)="onSubmit()" [label]="'Submit'"></p-button>
+  </div>
+</form>

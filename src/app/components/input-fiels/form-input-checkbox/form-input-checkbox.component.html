@@ -1,0 +1,13 @@
+<div class="col-12 md:col-6" [formGroup]="formGroup">
+  <div class="text-lg">{{ element.title }}</div>
+  <div *ngFor="let category of element.choices" class="field-checkbox">
+    <p-checkbox
+      [inputId]="element.name + '_' + category.key"
+      [value]="category.key"
+      formControlName="{{ element.name }}"
+    ></p-checkbox>
+    <label [for]="element.name + '_' + category.key" class="ml-2 px-2">{{
+      category.name
+    }}</label>
+  </div>
+</div>
